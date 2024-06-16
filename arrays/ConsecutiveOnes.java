@@ -1,5 +1,7 @@
 package arrays;
 
+
+// Given a binary array nums, return the maximum number of consecutive 1's in the array.
 public class ConsecutiveOnes {
     public  static int findMaxConsecutiveOnes(int[] nums) {
         int max = 0;
