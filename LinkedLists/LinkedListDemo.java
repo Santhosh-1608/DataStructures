@@ -75,15 +75,13 @@ public class LinkedListDemo {
             return head;
         }
         Node temp = head;
-        Node prev = null;
         int count = 0;
         while(temp != null){
             count++;
-            if(count==k){
-                prev.next =  prev.next.next;
+            if(count==k-1){
+                temp.next =  temp.next.next;
                 break;
             }
-            prev = temp;
             temp = temp.next;
 
 
@@ -158,26 +156,29 @@ public class LinkedListDemo {
         return head;
     }
     public static void main(String[] args) {
-        Scanner obj = new Scanner(System.in);
-        System.out.print("Enter the number of elements in the array:");
-        int n = obj.nextInt();
-        int[] arr = new int[n];
-        System.out.println("Enter the elements of the array:");
-        for(int i=0;i<n;i++){
-            arr[i] = obj.nextInt();
-        }
-        Node head = convertArrayTOLL(arr);
-        display(head);
-        System.out.println();
-        System.out.println("Enter the element to search:");
-        int ele = obj.nextInt();
-        search(head,ele);
-        System.out.println("Length of the linked list is: "+findLen(head));
-        Node head1 = Deleteele(head,3);
-        display(head1);
+        // Scanner obj = new Scanner(System.in);
+        // System.out.print("Enter the number of elements in the array:");
+        // int n = obj.nextInt();
+        // int[] arr = new int[n];
+        // System.out.println("Enter the elements of the array:");
+        // for(int i=0;i<n;i++){
+        //     arr[i] = obj.nextInt();
+        // }
+        // Node head = convertArrayTOLL(arr);
+        // display(head);
+        // System.out.println();
+        // System.out.println("Enter the element to search:");
+        // int ele = obj.nextInt();
+        // search(head,ele);
+        // System.out.println("Length of the linked list is: "+findLen(head));
+        // Node head1 = Deleteele(head,3);
+        // display(head1);
        
-        head = insertBeforeValue(100, 2, head);
+        // head = insertBeforeValue(100, 2, head);
+        int[] arr = {1,2,3,4,5};
+        Node head = convertArrayTOLL(arr);
+        head = DeleteK(head, 3);
         display(head);
-        obj.close();   
+        //obj.close()
     }
 }
