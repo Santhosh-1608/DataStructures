@@ -9,7 +9,7 @@ public class Subset {
     }
     public static void subs(int ind,int[] arr,List<Integer> ds){
         if(ind==arr.length){
-            if(ds.size()==0) System.out.println("{}");
+            if(ds.size()==0) System.out.print("{}");
             for(int i:ds){
                 System.out.print(i+" ");
             }
@@ -17,10 +17,10 @@ public class Subset {
             return;
         }
 
+        subs(ind+1,arr,ds);
         ds.add(arr[ind]);
         subs(ind+1,arr,ds);
         ds.remove(ds.size()-1);
-        subs(ind+1,arr,ds);
     }
 
 }
